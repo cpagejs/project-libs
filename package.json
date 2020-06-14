@@ -1,8 +1,8 @@
 {
-  "name": "@cpage/utils",
+  "name": "project-libs",
   "version": "1.0.0",
   "description": "",
-  "main": "/dist/@cpage-utils.js",
+  "main": "/dist/project-libs.js",
   "scripts": {
     "build": "webpack",
     "tsc": "tsc"
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/cpagejs/utils.git"
   },
-  "keywords": ["utils", "javascript", "cpage", "@cpage/utils"],
+  "keywords": ["utils", "libs", "javascript", "cpage", "project-libs"],
   "author": "夏小宅",
   "license": "ISC",
   "devDependencies": {
@@ -22,7 +22,7 @@
     "webpack-cli": "^4.0.0-beta.2"
   },
   "bugs": {
-    "url": "https://github.com/cpagejs/utils/issues"
+    "url": "https://github.com/cpagejs/project-libs/issues"
   },
-  "homepage": "https://github.com/cpagejs/utils#readme"
+  "homepage": "https://github.com/cpagejs/project-libs#readme"
 }

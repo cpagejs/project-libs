@@ -11,7 +11,7 @@ import type from '../type/type';
  */
 export default function isIDCard(card: string): boolean {
   if(type(card) !== 'string'){
-    console.error('@cpage/utils（isIDCard方法参数错误）：card必须为字符串');
+    console.error('project-libs（isIDCard方法参数错误）：card必须为字符串');
     return;
   }
 

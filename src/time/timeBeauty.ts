@@ -15,11 +15,11 @@ import type from '../type/type';
  */
 export default function timeBeauty(timestamp: string | number): string {
   if(!timestamp){
-    console.error('@cpage/utils（timeBeauty方法参数错误）：参数为必填项');
+    console.error('project-libs（timeBeauty方法参数错误）：参数为必填项');
     return;
   }
   if(timestamp && !(type(timestamp) === 'string' || type(timestamp) === 'number') ){
-    console.error('@cpage/utils（timeBeauty方法参数错误）：参数为 string | number');
+    console.error('project-libs（timeBeauty方法参数错误）：参数为 string | number');
     return;
   }
 

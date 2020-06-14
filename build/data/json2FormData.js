@@ -6,7 +6,7 @@
  */
 export default function json2FormData(obj) {
     if (type(obj) !== 'object') {
-        console.error('@cpage/utils（json2FormData方法参数错误）：obj必须为对象');
+        console.error('project-libs（json2FormData方法参数错误）：obj必须为对象');
         return;
     }
     var formData = new FormData();

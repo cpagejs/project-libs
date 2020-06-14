@@ -30,7 +30,7 @@ var cookie = {
     */
     set: function (name, value, config) {
         if (!this.support()) {
-            console.error('@cpage/utils（Cookie方法不可用）：浏览器不支持Cookie，请检查相关设置');
+            console.error('project-libs（Cookie方法不可用）：浏览器不支持Cookie，请检查相关设置');
             return;
         }
         var data = name + "=" + encodeURIComponent(JSON.stringify(value));
@@ -63,7 +63,7 @@ var cookie = {
     */
     get: function (name) {
         if (!this.support()) {
-            console.error('@cpage/utils（Cookie方法不可用）：浏览器不支持Cookie，请检查相关设置');
+            console.error('project-libs（Cookie方法不可用）：浏览器不支持Cookie，请检查相关设置');
             return;
         }
         var cs = document.cookie, arr = [], obj = {};
@@ -85,7 +85,7 @@ var cookie = {
     remove: function (name, path) {
         var _this = this;
         if (!this.support()) {
-            console.error('@cpage/utils（Cookie方法不可用）：浏览器不支持Cookie，请检查相关设置');
+            console.error('project-libs（Cookie方法不可用）：浏览器不支持Cookie，请检查相关设置');
             return;
         }
         if (arguments.length === 0) {

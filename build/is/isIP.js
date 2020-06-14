@@ -9,7 +9,7 @@
  */
 export default function isIP(ip) {
     if (type(ip) !== 'string') {
-        console.error('@cpage/utils（isIP方法参数错误）：ip必须为字符串');
+        console.error('project-libs（isIP方法参数错误）：ip必须为字符串');
         return;
     }
     return /^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])$/.test(ip);

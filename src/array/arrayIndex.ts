@@ -9,7 +9,7 @@ import compare from '../data/compare';
  */
 export default function arrayIndex(arr: Array<any>, obj: any): number {
   if(type(arr) !== 'array'){
-    console.error('@cpage/utils（arrayIndex方法参数错误）：arr必须为数组');
+    console.error('project-libs（arrayIndex方法参数错误）：arr必须为数组');
     return;
   }
 

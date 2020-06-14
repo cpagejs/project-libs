@@ -7,7 +7,7 @@
  */
 export default function isQQNumber(qq) {
     if (type(qq) !== 'string') {
-        console.error('@cpage/utils（isQQNumber方法参数错误）：qq必须为字符串');
+        console.error('project-libs（isQQNumber方法参数错误）：qq必须为字符串');
         return;
     }
     return /^[1-9][0-9]{4,12}$/.test(qq);

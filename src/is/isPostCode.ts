@@ -7,7 +7,7 @@ import type from '../type/type';
  */
 export default function isPostCode(code: string): boolean {
   if(type(code) !== 'string'){
-    console.error('@cpage/utils（isPostCode方法参数错误）：code必须为字符串');
+    console.error('project-libs（isPostCode方法参数错误）：code必须为字符串');
     return;
   }
 

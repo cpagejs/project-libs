@@ -10,7 +10,7 @@ import type from '../type/type';
  */
 export default function isIP(ip: string): boolean {
   if(type(ip) !== 'string'){
-    console.error('@cpage/utils（isIP方法参数错误）：ip必须为字符串');
+    console.error('project-libs（isIP方法参数错误）：ip必须为字符串');
     return;
   }
 

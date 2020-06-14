@@ -38,7 +38,7 @@ const cookie = {
   */
   set(name: string, value: string | object, config?: CONFIG): void {
     if (!this.support()) {
-      console.error('@cpage/utils（Cookie方法不可用）：浏览器不支持Cookie，请检查相关设置');
+      console.error('project-libs（Cookie方法不可用）：浏览器不支持Cookie，请检查相关设置');
       return;
     }
 
@@ -80,7 +80,7 @@ const cookie = {
   */
   get(name?: string): string | object | null {
     if (!this.support()) {
-      console.error('@cpage/utils（Cookie方法不可用）：浏览器不支持Cookie，请检查相关设置');
+      console.error('project-libs（Cookie方法不可用）：浏览器不支持Cookie，请检查相关设置');
       return;
     }
 
@@ -107,7 +107,7 @@ const cookie = {
   */
   remove(name: string, path?: string): void {
     if (!this.support()) {
-      console.error('@cpage/utils（Cookie方法不可用）：浏览器不支持Cookie，请检查相关设置');
+      console.error('project-libs（Cookie方法不可用）：浏览器不支持Cookie，请检查相关设置');
       return;
     }
 

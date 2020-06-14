@@ -7,13 +7,13 @@ import type from '../type/type';
  */
 export default function copy<T>(str: string): Promise<any> {
   if(type(str) !== 'string'){
-    console.error('@cpage/utils（copy方法参数错误）：str必须为字符串');
+    console.error('project-libs（copy方法参数错误）：str必须为字符串');
     return;
   }
 
   return new Promise((resolve, reject) => {
     try {
-      const id = "@cpage/utils-copy-input";
+      const id = "project-libs-copy-input";
       const ele = (<HTMLInputElement>document.getElementById(id));
       if (ele) {
         ele.value = str;

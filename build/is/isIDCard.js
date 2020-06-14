@@ -10,7 +10,7 @@
  */
 export default function isIDCard(card) {
     if (type(card) !== 'string') {
-        console.error('@cpage/utils（isIDCard方法参数错误）：card必须为字符串');
+        console.error('project-libs（isIDCard方法参数错误）：card必须为字符串');
         return;
     }
     return /^[1-9][0-9]{5}(18|19|(2[0-9]))[0-9]{2}((0[1-9])|(10|11|12))(([0-2][1-9])|10|20|30|31)[0-9]{3}[0-9Xx]$/.test(card);

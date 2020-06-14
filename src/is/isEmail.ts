@@ -37,7 +37,7 @@ const _domains = [
  */
 export default function isEmail(email: string, domains: string[] = _domains): boolean {
   if (domains && !Array.isArray(domains)) {
-    console.error('@cpage/utils（isEmail参数错误）：域名必须为数组');
+    console.error('project-libs（isEmail参数错误）：域名必须为数组');
   }
   const reg = new RegExp(`^([A-Za-z0-9\.\_\-])+\@(${domains.join("|")})$`);
   return reg.test(email);

@@ -7,11 +7,11 @@
  */
 export default function urlGet(key, href) {
     if (type(key) !== 'string') {
-        console.error('@cpage/utils（urlGet方法参数错误）：key必须为字符串');
+        console.error('project-libs（urlGet方法参数错误）：key必须为字符串');
         return;
     }
     if (href && type(href) !== 'string') {
-        console.error('@cpage/utils（urlGet方法参数错误）：href必须为字符串');
+        console.error('project-libs（urlGet方法参数错误）：href必须为字符串');
         return;
     }
     var querystr = href ? href.split("?") : window.location.href.split("?");

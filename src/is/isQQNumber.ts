@@ -8,7 +8,7 @@ import type from '../type/type';
  */
 export default function isQQNumber(qq: string): boolean {
   if(type(qq) !== 'string'){
-    console.error('@cpage/utils（isQQNumber方法参数错误）：qq必须为字符串');
+    console.error('project-libs（isQQNumber方法参数错误）：qq必须为字符串');
     return;
   }
 

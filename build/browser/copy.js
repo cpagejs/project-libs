@@ -6,12 +6,12 @@
  */
 export default function copy(str) {
     if (type(str) !== 'string') {
-        console.error('@cpage/utils（copy方法参数错误）：str必须为字符串');
+        console.error('project-libs（copy方法参数错误）：str必须为字符串');
         return;
     }
     return new Promise(function (resolve, reject) {
         try {
-            var id = "@cpage/utils-copy-input";
+            var id = "project-libs-copy-input";
             var ele = document.getElementById(id);
             if (ele) {
                 ele.value = str;

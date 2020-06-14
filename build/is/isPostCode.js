@@ -6,7 +6,7 @@
  */
 export default function isPostCode(code) {
     if (type(code) !== 'string') {
-        console.error('@cpage/utils（isPostCode方法参数错误）：code必须为字符串');
+        console.error('project-libs（isPostCode方法参数错误）：code必须为字符串');
         return;
     }
     return /^[1-9][0-9]{5}$/.test(code.toString());

@@ -5,7 +5,7 @@
  */
 export default function createLink(url) {
     if (type(url) !== 'string') {
-        console.error('@cpage/utils（createLink方法参数错误）：url必须为字符串');
+        console.error('project-libs（createLink方法参数错误）：url必须为字符串');
         return;
     }
     var cssLink = document.createElement("link");

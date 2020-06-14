@@ -5,8 +5,8 @@ module.exports = {
   entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '@cpage-utils.js',
-    library: '@cpage/utils',
+    filename: 'project-libs.js',
+    library: 'project-libs',
     libraryTarget: 'umd'
   },
   module: {
