@@ -7,7 +7,7 @@
 export default function isEmpty(obj) {
     if (type(obj) === 'array') {
         // @ts-ignore
-        if (obj.length) {
+        if (!obj.length) {
             return true;
         }
     }
