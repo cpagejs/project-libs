@@ -60,8 +60,31 @@ declare namespace cookie {
     remove(name: string, path?: string): void;
   }
 }
-
 declare const cookie: cookie.CookieStatic;
+
+/**
+ * base64转码和解码
+ */
+declare namespace base64 {
+  interface base64Static {
+    /**
+   * 字符串转 base64
+   * @param str {string} 字符串
+   * @returns {string} 字符串
+   * @summary btoa() 方法不支持 IE9 及更早的 IE 版本
+   */
+    encode(str: string): string;
+
+    /**
+   * base64 转字符串
+   * @param str {string} 字符串
+   * @returns {string} 字符串
+   * @summary atob() 方法不支持 IE9 及更早的 IE 版本
+   */
+    decode(str: string): string;
+  }
+}
+declare const base64: base64.base64Static;
 
 /**
  * replace 函数，可以根据指定的选项来替换内容
@@ -70,6 +93,13 @@ declare const cookie: cookie.CookieStatic;
  * @returns {string} string
  */
 export declare function replace(source: String, option: [] | {}): string;
+
+/**
+ * 从对象中根据特定的属性返回一个新的对象
+ * @param object 对象来源
+ * @param props 要选取的属性
+ */
+export declare function pick(object: object, props: Array<any>);
 
 /**
  * 浅拷贝，才方法只针对普通对象{}和数组[]
@@ -115,6 +145,13 @@ export declare function arrayIndex(arr: Array<any>, obj: any): number;
  * @returns {Array<any>} Array<any>
  */
 export declare function arrayGroup(arr: Array<any>, num: number): Array<any>;
+
+/**
+ * 判断对象或者数组是否为空
+ * @param obj 数组或者对象
+ * @returns boolean
+ */
+export declare function isEmpty(obj: Array<any> | Object): boolean;
 
 /**
  * 判断是否是安卓设备
@@ -288,6 +325,25 @@ export declare function timestamp(): string;
  * ```
  */
 export declare function timeBeauty(timestamp: string | number): string;
+
+/**
+ * 获取某一天
+ * @param fill {boolean} 布尔值,是否补 0,默认为 true
+ * @returns {number | string} 返回哪一天
+ */
+export declare function getDay(fill: boolean): number | string;
+
+/**
+ * 获取当前月份
+ * @param {Boolean} fill 布尔值,是否补 0,默认为 true
+ */
+export declare function getMonth(fill: boolean);
+
+/**
+ * 获取年份
+ * @returns {number} 返回哪一年
+ */
+export declare function getYear(): number;
 
 /**
  * 对象转为 formdata
