@@ -29,6 +29,7 @@ export { default as clone } from './data/clone';
 export { default as deepClone } from './data/deepClone';
 export { default as compare } from './data/compare';
 export { default as json2FormData } from './data/json2FormData';
+export { default as base64 } from './data/base64';
 
 // 数组
 export { default as arrayUnique } from './array/arrayUnique';
