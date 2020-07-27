@@ -8,7 +8,7 @@ import type from '../type/type';
 export default function isEmpty(obj: Array<any> | Object): boolean {
   if (type(obj) === 'array') {
     // @ts-ignore
-    if (obj.length) {
+    if (!obj.length) {
       return true;
     }
   }
