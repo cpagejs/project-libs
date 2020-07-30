@@ -6,6 +6,9 @@ import type from '../type/type';
  * @returns boolean
  */
 export default function isEmpty(obj: Array<any> | Object): boolean {
+  if (!obj) {
+    return false;
+  }
   if (type(obj) === 'array') {
     // @ts-ignore
     if (!obj.length) {

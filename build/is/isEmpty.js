@@ -5,6 +5,9 @@
  * @returns boolean
  */
 export default function isEmpty(obj) {
+    if (!obj) {
+        return false;
+    }
     if (type(obj) === 'array') {
         // @ts-ignore
         if (!obj.length) {
