@@ -1,4 +1,6 @@
-﻿var Base64 = /** @class */ (function () {
+﻿"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Base64 = /** @class */ (function () {
     function Base64() {
     }
     /**
@@ -24,4 +26,4 @@
     return Base64;
 }());
 var base64 = new Base64();
-export default base64;
+exports.default = base64;

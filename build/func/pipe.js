@@ -1,4 +1,5 @@
-﻿var __read = (this && this.__read) || function (o, n) {
+﻿"use strict";
+var __read = (this && this.__read) || function (o, n) {
     var m = typeof Symbol === "function" && o[Symbol.iterator];
     if (!m) return o;
     var i = m.call(o), r, ar = [], e;
@@ -18,6 +19,7 @@ var __spread = (this && this.__spread) || function () {
     for (var ar = [], i = 0; i < arguments.length; i++) ar = ar.concat(__read(arguments[i]));
     return ar;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * 管道函数，从左向右依次执行
  * @returns {any} any
@@ -30,7 +32,7 @@ var __spread = (this && this.__spread) || function () {
    // TEST:CCCCCOM!
  * ```
  */
-export default function pipe() {
+function pipe() {
     var fns = __spread(arguments);
     return function (arg) {
         var res = arg;
@@ -40,3 +42,4 @@ export default function pipe() {
         return res;
     };
 }
+exports.default = pipe;

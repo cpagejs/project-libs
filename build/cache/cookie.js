@@ -1,4 +1,6 @@
-﻿;
+﻿"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+;
 /**
  * 操作 cookie
  */
@@ -99,4 +101,4 @@ var cookie = {
         }
     }
 };
-export default cookie;
+exports.default = cookie;

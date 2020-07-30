@@ -147,8 +147,8 @@ export declare function arrayIndex(arr: Array<any>, obj: any): number;
 export declare function arrayGroup(arr: Array<any>, num: number): Array<any>;
 
 /**
- * 判断对象或者数组是否为空
- * @param obj 数组或者对象
+ * 判断空对象，空数组，空字符串
+ * @param obj 数组或者对象或者字符串
  * @returns boolean
  */
 export declare function isEmpty(obj: Array<any> | Object): boolean;

@@ -1,4 +1,6 @@
-﻿import type from '../type/type';
+﻿"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var type_1 = require("../type/type");
 /**
  * 校验是否为不含端口号的IP地址
  * 规则：
@@ -7,10 +9,11 @@
  * @param ip {string} ip地址，类型为字符串
  * @returns {boolean} boolean
  */
-export default function isIP(ip) {
-    if (type(ip) !== 'string') {
+function isIP(ip) {
+    if (type_1.default(ip) !== 'string') {
         console.error('project-libs（isIP方法参数错误）：ip必须为字符串');
         return;
     }
     return /^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])$/.test(ip);
 }
+exports.default = isIP;

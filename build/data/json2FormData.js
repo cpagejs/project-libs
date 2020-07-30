@@ -1,11 +1,13 @@
-﻿import type from '../type/type';
+﻿"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var type_1 = require("../type/type");
 /**
  * 对象转为 formdata
  * @param obj {object} 对象
  * @returns {FormData} FormData
  */
-export default function json2FormData(obj) {
-    if (type(obj) !== 'object') {
+function json2FormData(obj) {
+    if (type_1.default(obj) !== 'object') {
         console.error('project-libs（json2FormData方法参数错误）：obj必须为对象');
         return;
     }
@@ -14,10 +16,10 @@ export default function json2FormData(obj) {
         parse(obj[i], i);
     }
     function parse(array, key) {
-        if (type(array) === "undefined" || type(array) === "function") {
+        if (type_1.default(array) === "undefined" || type_1.default(array) === "function") {
             return false;
         }
-        switch (type(array)) {
+        switch (type_1.default(array)) {
             case "array":
                 if (array.length === 0) {
                     formData.append("" + key, "");
@@ -42,3 +44,4 @@ export default function json2FormData(obj) {
     }
     return formData;
 }
+exports.default = json2FormData;

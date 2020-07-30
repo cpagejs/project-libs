@@ -1,16 +1,18 @@
-﻿import type from '../type/type';
+﻿"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var type_1 = require("../type/type");
 /**
  * 获得URL中GET请求的参数值
  * @param key {string} 参数
  * @param href {string} 网址，如果没有则默认选取当前网址
  * @returns {string | null} 如果有值返回字符串，否则返回 null
  */
-export default function urlGet(key, href) {
-    if (type(key) !== 'string') {
+function urlGet(key, href) {
+    if (type_1.default(key) !== 'string') {
         console.error('project-libs（urlGet方法参数错误）：key必须为字符串');
         return;
     }
-    if (href && type(href) !== 'string') {
+    if (href && type_1.default(href) !== 'string') {
         console.error('project-libs（urlGet方法参数错误）：href必须为字符串');
         return;
     }
@@ -26,3 +28,4 @@ export default function urlGet(key, href) {
     }
     return null;
 }
+exports.default = urlGet;

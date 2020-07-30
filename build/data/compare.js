@@ -1,10 +1,12 @@
-﻿/**
+﻿"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
  * 判断两个变量是否相等, 此方法用于相同数据类型的变量比较
  * @param a {any}
  * @param b {any}
  * @returns {boolean} boolean
  */
-export default function compare(a, b) {
+function compare(a, b) {
     var pt = /undefined|number|string|boolean/, fn = /^(function\s*)(\w*\b)/, cr = "constructor", cn = "childNodes", pn = "parentNode";
     if (pt.test(typeof a) || pt.test(typeof b) || a === null || b === null) {
         return a === b || (isNaN(a) && isNaN(b)); //为了方便，此处假定NaN == NaN
@@ -51,3 +53,4 @@ export default function compare(a, b) {
     }
     return true;
 }
+exports.default = compare;

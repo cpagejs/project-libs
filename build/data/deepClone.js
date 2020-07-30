@@ -1,11 +1,13 @@
-﻿import type from '../type/type';
+﻿"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var type_1 = require("../type/type");
 /**
  * 深层次克隆
  * @param data {any} 数据源
  * @returns {any} any
  */
-export default function deepClone(data) {
-    var t = type(data), o, i, ni;
+function deepClone(data) {
+    var t = type_1.default(data), o, i, ni;
     if (t === 'array') {
         o = [];
     }
@@ -28,3 +30,4 @@ export default function deepClone(data) {
         return o;
     }
 }
+exports.default = deepClone;

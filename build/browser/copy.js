@@ -1,11 +1,13 @@
-﻿import type from '../type/type';
+﻿"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var type_1 = require("../type/type");
 /**
  * 复制到剪切板
  * @param str {string} 需要复制到剪贴板的文本
  * @returns {Promise} 返回一个 promise 对象
  */
-export default function copy(str) {
-    if (type(str) !== 'string') {
+function copy(str) {
+    if (type_1.default(str) !== 'string') {
         console.error('project-libs（copy方法参数错误）：str必须为字符串');
         return;
     }
@@ -42,3 +44,4 @@ export default function copy(str) {
         }
     });
 }
+exports.default = copy;

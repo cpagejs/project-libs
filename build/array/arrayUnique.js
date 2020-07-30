@@ -1,4 +1,5 @@
-﻿var __read = (this && this.__read) || function (o, n) {
+﻿"use strict";
+var __read = (this && this.__read) || function (o, n) {
     var m = typeof Symbol === "function" && o[Symbol.iterator];
     if (!m) return o;
     var i = m.call(o), r, ar = [], e;
@@ -18,11 +19,13 @@ var __spread = (this && this.__spread) || function () {
     for (var ar = [], i = 0; i < arguments.length; i++) ar = ar.concat(__read(arguments[i]));
     return ar;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * 数组去重
  * @param arr {array} 数组
  * @returns {array} array
  */
-export default function arrayUnique(arr) {
+function arrayUnique(arr) {
     return __spread(new Set(arr));
 }
+exports.default = arrayUnique;

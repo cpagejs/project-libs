@@ -1,9 +1,11 @@
-﻿/**
+﻿"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+/**
  * 判断数据类型
  * @param ele {any} 元素
  * @returns {string} boolean/number/string/function/array/date/regExp/undefined/null/object/map/set/symbol
  */
-export default function type(ele) {
+function type(ele) {
     var toString = Object.prototype.toString, map = {
         "[object Boolean]": "boolean",
         '[object Number]': 'number',
@@ -21,3 +23,4 @@ export default function type(ele) {
     };
     return map[toString.call(ele)];
 }
+exports.default = type;

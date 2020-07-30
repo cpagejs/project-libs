@@ -1,23 +1,29 @@
-﻿import type from '../type/type';
+﻿"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var type_1 = require("../type/type");
 /**
- * 判断对象或者数组是否为空
- * @param obj 数组或者对象
+ * 判断空对象，空数组，空字符串
+ * @param obj 数组或者对象或者字符串
  * @returns boolean
  */
-export default function isEmpty(obj) {
+function isEmpty(obj) {
     if (!obj) {
-        return false;
+        return true;
     }
-    if (type(obj) === 'array') {
+    if (obj === '') {
+        return true;
+    }
+    if (type_1.default(obj) === 'array') {
         // @ts-ignore
         if (!obj.length) {
             return true;
         }
     }
-    if (type(obj) === 'object') {
+    if (type_1.default(obj) === 'object') {
         if (JSON.stringify(obj) === "{}") {
             return true;
         }
     }
     return false;
 }
+exports.default = isEmpty;

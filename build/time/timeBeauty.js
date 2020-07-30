@@ -1,4 +1,6 @@
-﻿import type from '../type/type';
+﻿"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var type_1 = require("../type/type");
 /**
  * 时间美化函数
  * @param timestamp {string | number} 字符串或者数字
@@ -12,12 +14,12 @@
  * 否则，显示年-月-日
  * ```
  */
-export default function timeBeauty(timestamp) {
+function timeBeauty(timestamp) {
     if (!timestamp) {
         console.error('project-libs（timeBeauty方法参数错误）：参数为必填项');
         return;
     }
-    if (timestamp && !(type(timestamp) === 'string' || type(timestamp) === 'number')) {
+    if (timestamp && !(type_1.default(timestamp) === 'string' || type_1.default(timestamp) === 'number')) {
         console.error('project-libs（timeBeauty方法参数错误）：参数为 string | number');
         return;
     }
@@ -57,6 +59,7 @@ export default function timeBeauty(timestamp) {
     }
     return result;
 }
+exports.default = timeBeauty;
 function fullTime(date) {
     return date.getFullYear() + "-" + (date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1) + "-" + (date.getDate() < 10 ? "0" + date.getDate() : date.getDate());
 }

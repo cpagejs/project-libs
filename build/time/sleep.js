@@ -1,4 +1,5 @@
-﻿var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
+﻿"use strict";
+var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -34,12 +35,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * 睡眠函数
  * @param delay 睡眠时间(毫秒)，默认为 0
  * @returns {promise} 返回一个 promise 对象
  */
-export default function sleep(delay) {
+function sleep(delay) {
     if (delay === void 0) { delay = 0; }
     return __awaiter(this, void 0, void 0, function () {
         return __generator(this, function (_a) {
@@ -47,3 +49,4 @@ export default function sleep(delay) {
         });
     });
 }
+exports.default = sleep;

@@ -1,4 +1,6 @@
-﻿var _domains = [
+﻿"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var _domains = [
     "qq.com",
     "163.com",
     "126.com",
@@ -34,7 +36,7 @@
   "outlook.com"
 ]
  */
-export default function isEmail(email, domains) {
+function isEmail(email, domains) {
     if (domains === void 0) { domains = _domains; }
     if (domains && !Array.isArray(domains)) {
         console.error('project-libs（isEmail参数错误）：域名必须为数组');
@@ -42,3 +44,4 @@ export default function isEmail(email, domains) {
     var reg = new RegExp("^([A-Za-z0-9._-])+@(" + domains.join("|") + ")$");
     return reg.test(email);
 }
+exports.default = isEmail;

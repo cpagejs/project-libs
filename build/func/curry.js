@@ -1,4 +1,5 @@
-﻿var __read = (this && this.__read) || function (o, n) {
+﻿"use strict";
+var __read = (this && this.__read) || function (o, n) {
     var m = typeof Symbol === "function" && o[Symbol.iterator];
     if (!m) return o;
     var i = m.call(o), r, ar = [], e;
@@ -18,6 +19,7 @@ var __spread = (this && this.__spread) || function () {
     for (var ar = [], i = 0; i < arguments.length; i++) ar = ar.concat(__read(arguments[i]));
     return ar;
 };
+Object.defineProperty(exports, "__esModule", { value: true });
 /**
  * 用来柯里化的函数
  * @param fn {Function}
@@ -32,7 +34,7 @@ var __spread = (this && this.__spread) || function () {
     // [1,2,3]
  * ```
  */
-export default function curry(fn) {
+function curry(fn) {
     return function aa() {
         var arg = [];
         for (var _i = 0; _i < arguments.length; _i++) {
@@ -46,3 +48,4 @@ export default function curry(fn) {
         }
     };
 }
+exports.default = curry;
