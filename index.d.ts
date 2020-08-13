@@ -292,7 +292,7 @@ export declare function urlParams(obj: any, encode: boolean): string;
 
 /**
  * 获得URL中GET请求的参数值
- * @param key {string} 参数
+ * @param key {string} 参数，可选，如果没有则返回所有的键值对
  * @param href {string} 网址，如果没有则默认选取当前网址
  * @returns {string | null} 如果有值返回字符串，否则返回 null
  */
