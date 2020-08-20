@@ -1,6 +1,6 @@
 {
   "name": "project-libs",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "project-libs 是一个常用函数集锦的工具库，包括浏览器、函数式、常用验证、cookie、数组处理等函数。",
   "main": "/dist/project-libs.js",
   "scripts": {

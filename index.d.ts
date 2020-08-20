@@ -102,6 +102,13 @@ export declare function replace(source: String, option: [] | {}): string;
 export declare function pick(object: object, props: Array<any>);
 
 /**
+ * 从对象中排除特定的属性返回一个新的对象
+ * @param object 对象来源
+ * @param props 要排除的属性
+ */
+export declare function unPick(object: object, props: Array<any>);
+
+/**
  * 浅拷贝，才方法只针对普通对象{}和数组[]
  * @param source {any} 需要拷贝的元素
  * @returns {any} any

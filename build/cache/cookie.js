@@ -70,14 +70,19 @@ var cookie = {
         }
         var cs = document.cookie, arr = [], obj = {};
         arr = cs.split(';');
-        for (var i = 0; i < arr.length; i++) {
-            var a = arr[i].split('=');
-            var key = a[0].trim();
-            if (key !== '') {
-                obj[key] = decodeURIComponent(a[1]);
+        if (cs !== '') {
+            for (var i = 0; i < arr.length; i++) {
+                var a = arr[i].split('=');
+                var key = a[0].trim();
+                if (key !== '') {
+                    obj[key] = JSON.parse(decodeURIComponent(a[1]));
+                }
             }
+            return name ? obj[name] : obj;
         }
-        return name ? obj[name] : obj;
+        else {
+            return undefined;
+        }
     },
     /**
      * 删除 cookie

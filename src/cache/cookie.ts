@@ -89,15 +89,19 @@ const cookie = {
       obj: any = {};
     arr = cs.split(';');
 
-    for (let i = 0; i < arr.length; i++) {
-      const a = arr[i].split('=');
-      const key = a[0].trim();
-      if(key !== ''){
-        obj[key] = decodeURIComponent(a[1])
+    if (cs !== '') {
+      for (let i = 0; i < arr.length; i++) {
+        const a = arr[i].split('=');
+        const key = a[0].trim();
+        if (key !== '') {
+          obj[key] = JSON.parse(decodeURIComponent(a[1]))
+        }
       }
-    }
 
-    return name ? obj[name] : obj;
+      return name ? obj[name] : obj;
+    } else {
+      return undefined;
+    }
   },
 
   /**
