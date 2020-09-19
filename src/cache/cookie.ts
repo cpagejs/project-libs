@@ -22,7 +22,7 @@ const cookie = {
 
   /**
    * 添加cookie
-   * @param name {string | object} cookie 键
+   * @param name {string} cookie 键
    * @param value {string} cookie 值
    * @param config {object} 可选配置项
    * ```
@@ -36,13 +36,13 @@ const cookie = {
    * } 
    * ```          
   */
-  set(name: string, value: string | object, config?: CONFIG): void {
+  set(name: string, value: string, config?: CONFIG): void {
     if (!this.support()) {
       console.error('project-libs（Cookie方法不可用）：浏览器不支持Cookie，请检查相关设置');
       return;
     }
 
-    let data = name + "=" + encodeURIComponent(JSON.stringify(value));
+    let data = name + "=" + encodeURIComponent(value);
 
     if (config?.hours) {
       const d = new Date();
@@ -94,13 +94,13 @@ const cookie = {
         const a = arr[i].split('=');
         const key = a[0].trim();
         if (key !== '') {
-          obj[key] = JSON.parse(decodeURIComponent(a[1]))
+          obj[key] = decodeURIComponent(a[1]);
         }
       }
 
       return name ? obj[name] : obj;
     } else {
-      return undefined;
+      return null;
     }
   },
 

@@ -30,7 +30,7 @@ declare namespace cookie {
     /**
      * 添加cookie
      * @param name {string} cookie 的键
-     * @param value {string | object} cookie 的值，字符串或者对象，会将其进行 JSON.stringify() 处理
+     * @param value {string} cookie 的值，字符串
      * @param config {object} 可选配置项
      * ```
      * {
@@ -48,7 +48,7 @@ declare namespace cookie {
     /**
      * 查询 cookie
      * @param name {string} Cookie 的键；如果参数为空则获取所有的cookie
-     * @returns {string | object | null} 有参数获取cookie后返回字符串，没有参数获取cookie返回json；获取不到则返回 null
+     * @returns {string | object | null} 有参数获取单独的cookie，没有参数获取所有cookie；获取不到则返回 null
     */
     get(name?: string): string | object | null;
 

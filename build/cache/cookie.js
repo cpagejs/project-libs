@@ -16,7 +16,7 @@ var cookie = {
     },
     /**
      * 添加cookie
-     * @param name {string | object} cookie 键
+     * @param name {string} cookie 键
      * @param value {string} cookie 值
      * @param config {object} 可选配置项
      * ```
@@ -35,7 +35,7 @@ var cookie = {
             console.error('project-libs（Cookie方法不可用）：浏览器不支持Cookie，请检查相关设置');
             return;
         }
-        var data = name + "=" + encodeURIComponent(JSON.stringify(value));
+        var data = name + "=" + encodeURIComponent(value);
         if (config === null || config === void 0 ? void 0 : config.hours) {
             var d = new Date();
             d.setHours(d.getHours() + (config === null || config === void 0 ? void 0 : config.hours));
@@ -75,13 +75,13 @@ var cookie = {
                 var a = arr[i].split('=');
                 var key = a[0].trim();
                 if (key !== '') {
-                    obj[key] = JSON.parse(decodeURIComponent(a[1]));
+                    obj[key] = decodeURIComponent(a[1]);
                 }
             }
             return name ? obj[name] : obj;
         }
         else {
-            return undefined;
+            return null;
         }
     },
     /**
