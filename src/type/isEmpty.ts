@@ -1,4 +1,4 @@
-import type from '../type/type';
+import type from './type';
 
 /**
  * 判断空对象，空数组，空字符串

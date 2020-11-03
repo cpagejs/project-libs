@@ -1,5 +1,7 @@
 // 类型
 export { default as type } from './type/type';
+export { default as isEmpty } from './type/isEmpty';
+export { default as isJsonString } from './type/isJsonString';
 
 // 缓存
 export { default as cookie } from './cache/cookie';
@@ -41,7 +43,6 @@ export { default as arrayIndex } from './array/arrayIndex';
 export { default as arrayGroup } from './array/arrayGroup';
 
 // 验证
-export { default as isEmpty } from './is/isEmpty';
 export { default as isAndroid } from './is/isAndroid';
 export { default as isApple } from './is/isApple';
 export { default as isIos } from './is/isIos';

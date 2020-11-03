@@ -6,6 +6,20 @@
 export declare function type(ele: any): string;
 
 /**
+ * 判断空对象，空数组，空字符串
+ * @param obj 数组或者对象或者字符串
+ * @returns boolean
+ */
+export declare function isEmpty(obj: Array<any> | Object): boolean;
+
+/**
+ * 验证是否可以被JSON.parse
+ * @param ele {any} 元素
+ * @returns {boolean} boolean
+ */
+export declare function isJsonString(ele: any): boolean;
+
+/**
  * 操作 Cookie
  */
 declare namespace cookie {
@@ -152,13 +166,6 @@ export declare function arrayIndex(arr: Array<any>, obj: any): number;
  * @returns {Array<any>} Array<any>
  */
 export declare function arrayGroup(arr: Array<any>, num: number): Array<any>;
-
-/**
- * 判断空对象，空数组，空字符串
- * @param obj 数组或者对象或者字符串
- * @returns boolean
- */
-export declare function isEmpty(obj: Array<any> | Object): boolean;
 
 /**
  * 判断是否是安卓设备

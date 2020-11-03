@@ -3,6 +3,10 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // 类型
 var type_1 = require("./type/type");
 Object.defineProperty(exports, "type", { enumerable: true, get: function () { return type_1.default; } });
+var isEmpty_1 = require("./type/isEmpty");
+Object.defineProperty(exports, "isEmpty", { enumerable: true, get: function () { return isEmpty_1.default; } });
+var isJsonString_1 = require("./type/isJsonString");
+Object.defineProperty(exports, "isJsonString", { enumerable: true, get: function () { return isJsonString_1.default; } });
 // 缓存
 var cookie_1 = require("./cache/cookie");
 Object.defineProperty(exports, "cookie", { enumerable: true, get: function () { return cookie_1.default; } });
@@ -64,8 +68,6 @@ Object.defineProperty(exports, "arrayIndex", { enumerable: true, get: function (
 var arrayGroup_1 = require("./array/arrayGroup");
 Object.defineProperty(exports, "arrayGroup", { enumerable: true, get: function () { return arrayGroup_1.default; } });
 // 验证
-var isEmpty_1 = require("./is/isEmpty");
-Object.defineProperty(exports, "isEmpty", { enumerable: true, get: function () { return isEmpty_1.default; } });
 var isAndroid_1 = require("./is/isAndroid");
 Object.defineProperty(exports, "isAndroid", { enumerable: true, get: function () { return isAndroid_1.default; } });
 var isApple_1 = require("./is/isApple");
