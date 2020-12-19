@@ -12,6 +12,7 @@ yarn add project-libs
 npm install project-libs
 
 ```
+备注：目前 project-libs 可以在浏览器端使用，暂不支持在 node 端使用。
 
 ## 使用
 例如需要判断是否为安卓设备
