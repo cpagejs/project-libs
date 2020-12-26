@@ -44,7 +44,7 @@ declare namespace cookie {
     /**
      * 添加cookie
      * @param name {string} cookie 的键
-     * @param value {string} cookie 的值，字符串
+     * @param value {string | object} cookie 值
      * @param config {object} 可选配置项
      * ```
      * {

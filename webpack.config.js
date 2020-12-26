@@ -5,8 +5,8 @@ module.exports = {
   entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'project-libs.js',
-    library: 'project-libs',
+    filename: 'projectLibs.js',
+    library: 'projectLibs',
     libraryTarget: 'umd'
   },
   module: {

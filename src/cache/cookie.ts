@@ -1,3 +1,5 @@
+import isJsonString from '../type/isJsonString';
+
 interface CONFIG {
   hours?: number, // 过期时间，单位小时
   path?: string, // 路径
@@ -23,7 +25,7 @@ const cookie = {
   /**
    * 添加cookie
    * @param name {string} cookie 键
-   * @param value {string} cookie 值
+   * @param value {string | object} cookie 值
    * @param config {object} 可选配置项
    * ```
    * {
@@ -36,13 +38,13 @@ const cookie = {
    * } 
    * ```          
   */
-  set(name: string, value: string, config?: CONFIG): void {
+  set(name: string, value: string | object, config?: CONFIG): void {
     if (!this.support()) {
       console.error('project-libs（Cookie方法不可用）：浏览器不支持Cookie，请检查相关设置');
       return;
     }
 
-    let data = name + "=" + encodeURIComponent(value);
+    let data = name + "=" + encodeURIComponent(JSON.stringify(value));
 
     if (config?.hours) {
       const d = new Date();
@@ -94,7 +96,8 @@ const cookie = {
         const a = arr[i].split('=');
         const key = a[0].trim();
         if (key !== '') {
-          obj[key] = decodeURIComponent(a[1]);
+          const val = decodeURIComponent(a[1]);
+          obj[key] = isJsonString ? JSON.parse(val) : val;
         }
       }
 

@@ -1,8 +1,8 @@
 {
   "name": "project-libs",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "project-libs 是一个常用函数集锦的工具库，包括浏览器、函数式、常用验证、cookie、数组处理等函数。",
-  "main": "/dist/project-libs.js",
+  "main": "/dist/projectLibs.js",
   "scripts": {
     "build": "webpack",
     "tsc": "tsc",
@@ -31,7 +31,9 @@
     "typescript": "^3.9.7",
     "vuepress": "^1.5.1",
     "webpack": "^4.43.0",
-    "webpack-cli": "^4.0.0-beta.2"
+    "webpack-cli": "^4.0.0-beta.2",
+    "@types/jsdom": "^16.2.5",
+    "jsdom": "^16.4.0"
   },
   "bugs": {
     "url": "https://github.com/cpagejs/project-libs/issues"

@@ -1,5 +1,6 @@
 ﻿"use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var isJsonString_1 = require("../type/isJsonString");
 ;
 /**
  * 操作 cookie
@@ -17,7 +18,7 @@ var cookie = {
     /**
      * 添加cookie
      * @param name {string} cookie 键
-     * @param value {string} cookie 值
+     * @param value {string | object} cookie 值
      * @param config {object} 可选配置项
      * ```
      * {
@@ -35,7 +36,7 @@ var cookie = {
             console.error('project-libs（Cookie方法不可用）：浏览器不支持Cookie，请检查相关设置');
             return;
         }
-        var data = name + "=" + encodeURIComponent(value);
+        var data = name + "=" + encodeURIComponent(JSON.stringify(value));
         if (config === null || config === void 0 ? void 0 : config.hours) {
             var d = new Date();
             d.setHours(d.getHours() + (config === null || config === void 0 ? void 0 : config.hours));
@@ -75,7 +76,8 @@ var cookie = {
                 var a = arr[i].split('=');
                 var key = a[0].trim();
                 if (key !== '') {
-                    obj[key] = decodeURIComponent(a[1]);
+                    var val = decodeURIComponent(a[1]);
+                    obj[key] = isJsonString_1.default ? JSON.parse(val) : val;
                 }
             }
             return name ? obj[name] : obj;
