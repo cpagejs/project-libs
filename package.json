@@ -6,7 +6,9 @@
   "scripts": {
     "build": "webpack",
     "tsc": "tsc",
-    "test": "./node_modules/mocha/bin/mocha --reporter spec --require ts-node/register test/*.test.ts"
+    "test": "./node_modules/mocha/bin/mocha --reporter spec --require ts-node/register test/*.test.ts",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
