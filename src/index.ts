@@ -41,6 +41,7 @@ export { default as pick } from './data/pick';
 export { default as arrayUnique } from './array/arrayUnique';
 export { default as arrayIndex } from './array/arrayIndex';
 export { default as arrayGroup } from './array/arrayGroup';
+export { default as arrayIntersection } from './array/arrayIntersection';
 
 // 验证
 export { default as isAndroid } from './is/isAndroid';

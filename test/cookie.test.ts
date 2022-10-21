@@ -11,7 +11,7 @@ const { window } = new JSDOM(`
 
 describe('cookie方法', () => {
   it('set', () => {
-    console.log(window);
+    // console.log(window);
     
   });
 });

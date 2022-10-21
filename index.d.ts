@@ -168,6 +168,22 @@ export declare function arrayIndex(arr: Array<any>, obj: any): number;
 export declare function arrayGroup(arr: Array<any>, num: number): Array<any>;
 
 /**
+ * 获取两个数组的交集
+ * @param a Array<any>
+ * @param b Array<any>
+ * @returns Array[]
+ */
+ export declare function arrayIntersection(a: Array<any>, b: Array<any>): any[];
+
+/**
+ * 获取两个数组的差集
+ * @param a Array<any>
+ * @param b Array<any>
+ * @returns Array[]
+ */
+export declare function arrayDiff(a: Array<any>, b: Array<any>): any[];
+
+/**
  * 判断是否是安卓设备
  * @returns {boolean} boolean
  */

@@ -67,6 +67,8 @@ var arrayIndex_1 = require("./array/arrayIndex");
 Object.defineProperty(exports, "arrayIndex", { enumerable: true, get: function () { return arrayIndex_1.default; } });
 var arrayGroup_1 = require("./array/arrayGroup");
 Object.defineProperty(exports, "arrayGroup", { enumerable: true, get: function () { return arrayGroup_1.default; } });
+var arrayIntersection_1 = require("./array/arrayIntersection");
+Object.defineProperty(exports, "arrayIntersection", { enumerable: true, get: function () { return arrayIntersection_1.default; } });
 // 验证
 var isAndroid_1 = require("./is/isAndroid");
 Object.defineProperty(exports, "isAndroid", { enumerable: true, get: function () { return isAndroid_1.default; } });
