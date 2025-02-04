@@ -1,4 +1,4 @@
-import type from '../type/type';
+import type from "../type/type";
 
 /**
  * 对象转为 formdata
@@ -6,9 +6,9 @@ import type from '../type/type';
  * @returns {FormData} FormData
  */
 export default function json2FormData(obj: any): FormData {
-  if(type(obj) !== 'object'){
-    console.error('project-libs（json2FormData方法参数错误）：obj必须为对象');
-    return;
+  if (type(obj) !== "object") {
+    console.error("project-libs（json2FormData方法参数错误）：obj必须为对象");
+    // return;
   }
 
   let formData = new FormData();
@@ -20,7 +20,7 @@ export default function json2FormData(obj: any): FormData {
       return false;
     }
 
-    switch(type(array)){
+    switch (type(array)) {
       case "array":
         if (array.length === 0) {
           formData.append(`${key}`, "");

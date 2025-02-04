@@ -4,9 +4,11 @@
  * @param props 要选取的属性
  */
 export default function pick(object: object, props: Array<any>) {
-  if (Array.isArray(props)) {
+  if (!Array.isArray(object) || !Array.isArray(props)) {
+    console.error("对象来源和要选取的属性必须为数组！");
+  } else {
     let obj: any = {};
-    props.forEach(item => {
+    props.forEach((item) => {
       // @ts-ignore
       obj[item] = object[item];
     });

@@ -1,4 +1,4 @@
-import type from '../type/type';
+import type from "../type/type";
 
 /**
  * 验证是否是 qq 号码
@@ -7,9 +7,9 @@ import type from '../type/type';
  * @returns {boolean} boolean
  */
 export default function isQQNumber(qq: string): boolean {
-  if(type(qq) !== 'string'){
-    console.error('project-libs（isQQNumber方法参数错误）：qq必须为字符串');
-    return;
+  if (type(qq) !== "string") {
+    console.error("project-libs（isQQNumber方法参数错误）：qq必须为字符串");
+    return false;
   }
 
   return /^[1-9][0-9]{4,12}$/.test(qq);

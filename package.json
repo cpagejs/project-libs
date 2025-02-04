@@ -1,18 +1,28 @@
 {
   "name": "project-libs",
-  "version": "1.1.8",
+  "version": "1.2.0",
   "description": "project-libs 是一个常用函数集锦的工具库，包括浏览器、函数式、常用验证、cookie、数组处理等函数。",
-  "main": "/dist/projectLibs.js",
-  "scripts": {
-    "build": "webpack",
-    "tsc": "tsc",
-    "test": "./node_modules/mocha/bin/mocha --reporter spec --require ts-node/register test/*.test.ts",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+  "homepage": "https://github.com/cpagejs/project-libs#readme",
+  "bugs": {
+    "url": "https://github.com/cpagejs/project-libs/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cpagejs/project-libs.git"
+  },
+  "license": "ISC",
+  "author": "cpage.js",
+  "main": "/dist/projectLibs.js",
+  "directories": {
+    "doc": "docs",
+    "test": "test"
+  },
+  "scripts": {
+    "build": "webpack",
+    "tsc": "tsc",
+    "test": "mocha --reporter spec --require ts-node/register ./test/*.test.ts",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "keywords": [
     "utils",
@@ -21,24 +31,21 @@
     "cpage",
     "project-libs"
   ],
-  "author": "夏小宅",
-  "license": "ISC",
   "devDependencies": {
-    "@types/chai": "^4.2.12",
-    "@types/mocha": "^8.0.0",
-    "chai": "^4.2.0",
-    "mocha": "^8.0.1",
-    "ts-loader": "^7.0.5",
-    "ts-node": "^8.10.2",
-    "typescript": "^3.9.7",
-    "vuepress": "^1.5.1",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^4.0.0-beta.2",
-    "@types/jsdom": "^16.2.5",
-    "jsdom": "^16.4.0"
-  },
-  "bugs": {
-    "url": "https://github.com/cpagejs/project-libs/issues"
-  },
-  "homepage": "https://github.com/cpagejs/project-libs#readme"
+    "@types/chai": "^5.0.1",
+    "@types/jsdom": "^21.1.7",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.8.6",
+    "@types/webpack": "^5.28.5",
+    "chai": "^5.1.2",
+    "jsdom": "^26.0.0",
+    "mocha": "^11.1.0",
+    "ts-loader": "^9.5.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.3",
+    "vuepress": "^1.9.10",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  }
 }

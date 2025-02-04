@@ -1,7 +1,9 @@
 ﻿"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var isJsonString_1 = require("../type/isJsonString");
-;
+var isJsonString_1 = __importDefault(require("../type/isJsonString"));
 /**
  * 操作 cookie
  */
@@ -30,10 +32,10 @@ var cookie = {
      *  sameSite: 用来限制第三方 Cookie
      * }
      * ```
-    */
+     */
     set: function (name, value, config) {
         if (!this.support()) {
-            console.error('project-libs（Cookie方法不可用）：浏览器不支持Cookie，请检查相关设置');
+            console.error("project-libs（Cookie方法不可用）：浏览器不支持Cookie，请检查相关设置");
             return;
         }
         var data = name + "=" + encodeURIComponent(JSON.stringify(value));
@@ -63,21 +65,21 @@ var cookie = {
      * 查询 cookie
      * @param name {string} Cookie 的键；如果参数为空则获取所有的cookie
      * @returns {string | object | null} 有参数获取cookie后返回字符串，没有参数获取cookie返回json；获取不到则返回 null
-    */
+     */
     get: function (name) {
         if (!this.support()) {
-            console.error('project-libs（Cookie方法不可用）：浏览器不支持Cookie，请检查相关设置');
-            return;
+            console.error("project-libs（Cookie方法不可用）：浏览器不支持Cookie，请检查相关设置");
+            return null;
         }
         var cs = document.cookie, arr = [], obj = {};
-        arr = cs.split(';');
-        if (cs !== '') {
+        arr = cs.split(";");
+        if (cs !== "") {
             for (var i = 0; i < arr.length; i++) {
-                var a = arr[i].split('=');
+                var a = arr[i].split("=");
                 var key = a[0].trim();
-                if (key !== '') {
+                if (key !== "") {
                     var val = decodeURIComponent(a[1]);
-                    obj[key] = isJsonString_1.default ? JSON.parse(val) : val;
+                    obj[key] = (0, isJsonString_1.default)(val) ? JSON.parse(val) : val;
                 }
             }
             return name ? obj[name] : obj;
@@ -90,11 +92,11 @@ var cookie = {
      * 删除 cookie
      * @param name Cookie 的键；如果参数为空，则清理所有的cookie
      * @param path 路径，默认为''
-    */
+     */
     remove: function (name, path) {
         var _this = this;
         if (!this.support()) {
-            console.error('project-libs（Cookie方法不可用）：浏览器不支持Cookie，请检查相关设置');
+            console.error("project-libs（Cookie方法不可用）：浏览器不支持Cookie，请检查相关设置");
             return;
         }
         if (arguments.length === 0) {
@@ -104,8 +106,8 @@ var cookie = {
             });
         }
         else {
-            this.set(name, path || '', { "hours": -1 });
+            this.set(name, path || "", { hours: -1 });
         }
-    }
+    },
 };
 exports.default = cookie;

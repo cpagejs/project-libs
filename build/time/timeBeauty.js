@@ -1,6 +1,10 @@
 ﻿"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var type_1 = require("../type/type");
+exports.default = timeBeauty;
+var type_1 = __importDefault(require("../type/type"));
 /**
  * 时间美化函数
  * @param timestamp {string | number} 字符串或者数字
@@ -16,11 +20,12 @@ var type_1 = require("../type/type");
  */
 function timeBeauty(timestamp) {
     if (!timestamp) {
-        console.error('project-libs（timeBeauty方法参数错误）：参数为必填项');
+        console.error("project-libs（timeBeauty方法参数错误）：参数为必填项");
         return;
     }
-    if (timestamp && !(type_1.default(timestamp) === 'string' || type_1.default(timestamp) === 'number')) {
-        console.error('project-libs（timeBeauty方法参数错误）：参数为 string | number');
+    if (timestamp &&
+        !((0, type_1.default)(timestamp) === "string" || (0, type_1.default)(timestamp) === "number")) {
+        console.error("project-libs（timeBeauty方法参数错误）：参数为 string | number");
         return;
     }
     var time = Number(timestamp);
@@ -33,22 +38,22 @@ function timeBeauty(timestamp) {
     var diffHour = Math.floor(diffTime / hour);
     var diffMinute = Math.floor(diffTime / minute);
     var diffDay = Math.floor(diffTime / day);
-    var result = '';
+    var result = "";
     if (diffTime > 0) {
         if (diffTime <= minute) {
-            result = '刚刚';
+            result = "刚刚";
         }
         else if (diffTime > minute && diffTime <= hour) {
-            result = diffMinute + "\u5206\u949F\u524D";
+            result = "".concat(diffMinute, "\u5206\u949F\u524D");
         }
         else if (diffTime > hour && diffTime <= day) {
-            result = diffHour + "\u5C0F\u65F6\u524D";
+            result = "".concat(diffHour, "\u5C0F\u65F6\u524D");
         }
         else if (diffTime > day && diffTime <= day * 2) {
-            result = "\u6628\u5929" + (date.getHours() < 10 ? "0" + date.getHours() : date.getHours()) + ":" + (date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes());
+            result = "\u6628\u5929".concat(date.getHours() < 10 ? "0".concat(date.getHours()) : date.getHours(), ":").concat(date.getMinutes() < 10 ? "0".concat(date.getMinutes()) : date.getMinutes());
         }
         else if (diffTime > day * 2 && diffTime <= day * 28) {
-            return diffDay + "\u5929\u524D";
+            return "".concat(diffDay, "\u5929\u524D");
         }
         else if (diffTime > day * 28) {
             result = fullTime(date);
@@ -59,7 +64,6 @@ function timeBeauty(timestamp) {
     }
     return result;
 }
-exports.default = timeBeauty;
 function fullTime(date) {
-    return date.getFullYear() + "-" + (date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1) + "-" + (date.getDate() < 10 ? "0" + date.getDate() : date.getDate());
+    return "".concat(date.getFullYear(), "-").concat(date.getMonth() + 1 < 10 ? "0".concat(date.getMonth() + 1) : date.getMonth() + 1, "-").concat(date.getDate() < 10 ? "0".concat(date.getDate()) : date.getDate());
 }

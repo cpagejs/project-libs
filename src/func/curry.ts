@@ -13,11 +13,11 @@
  * ```
  */
 export default function curry(fn: Function): any {
-  return function aa(...arg: any) {
+  return function aa(...arg: any): any {
     if (arg.length >= fn.length) {
       return fn(...arg);
     } else {
       return aa.bind(null, ...arg);
     }
-  }
+  };
 }

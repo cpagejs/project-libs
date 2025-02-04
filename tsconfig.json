@@ -1,19 +1,17 @@
 {
   "compilerOptions": {
-    "outDir": "./build/",
-    "noImplicitAny": true,
-    // "module": "es6",
-    "allowJs": true,
-    "target": "es5",
-    "lib":["es5", "dom", "dom.iterable", "es2015", "es2016", "es2017", "scripthost"],
+    "target": "ES5",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./build",
+    "rootDir": ".",
     "downlevelIteration": true,
     "emitBOM": true,
-    "jsx": "react"
+    "experimentalDecorators": true
   },
-  "include": [
-    "./src/**/*"
-  ],
-  "exclude": [
-    "node_modules"
-  ]
+  "include": ["src/**/*", "test/**/*"],
+  "exclude": ["node_modules"]
 }

@@ -1,4 +1,4 @@
-import type from '../type/type';
+import type from "../type/type";
 
 /**
  * 复制到剪切板
@@ -6,19 +6,19 @@ import type from '../type/type';
  * @returns {Promise} 返回一个 promise 对象
  */
 export default function copy<T>(str: string): Promise<any> {
-  if(type(str) !== 'string'){
-    console.error('project-libs（copy方法参数错误）：str必须为字符串');
-    return;
+  if (type(str) !== "string") {
+    console.error("project-libs（copy方法参数错误）：str必须为字符串");
+    return Promise.reject();
   }
 
   return new Promise((resolve, reject) => {
     try {
       const id = "project-libs-copy-input";
-      const ele = (<HTMLInputElement>document.getElementById(id));
+      const ele = <HTMLInputElement>document.getElementById(id);
       if (ele) {
         ele.value = str;
         ele.select();
-        document.execCommand('copy');
+        document.execCommand("copy");
       } else {
         const input = document.createElement("input");
         input.setAttribute("id", id);
@@ -28,16 +28,16 @@ export default function copy<T>(str: string): Promise<any> {
         input.value = str;
         document.body.appendChild(input);
         input.select();
-        document.execCommand('copy');
+        document.execCommand("copy");
       }
       resolve({
         stauts: 1,
-        data: str
+        data: str,
       });
     } catch (error) {
       reject({
         status: 0,
-        error
+        error,
       });
     }
   });

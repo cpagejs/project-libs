@@ -1,13 +1,17 @@
 ﻿"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-var type_1 = require("../type/type");
+exports.default = deepClone;
+var type_1 = __importDefault(require("../type/type"));
 /**
  * 深层次克隆
  * @param data {any} 数据源
  * @returns {any} any
  */
 function deepClone(data) {
-    var t = type_1.default(data), o, i, ni;
+    var t = (0, type_1.default)(data), o, i, ni;
     if (t === 'array') {
         o = [];
     }
@@ -30,4 +34,3 @@ function deepClone(data) {
         return o;
     }
 }
-exports.default = deepClone;

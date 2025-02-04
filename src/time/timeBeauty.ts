@@ -1,4 +1,4 @@
-import type from '../type/type';
+import type from "../type/type";
 
 /**
  * 时间美化函数
@@ -13,13 +13,20 @@ import type from '../type/type';
  * 否则，显示年-月-日
  * ```
  */
-export default function timeBeauty(timestamp: string | number): string {
-  if(!timestamp){
-    console.error('project-libs（timeBeauty方法参数错误）：参数为必填项');
+export default function timeBeauty(
+  timestamp: string | number
+): string | undefined {
+  if (!timestamp) {
+    console.error("project-libs（timeBeauty方法参数错误）：参数为必填项");
     return;
   }
-  if(timestamp && !(type(timestamp) === 'string' || type(timestamp) === 'number') ){
-    console.error('project-libs（timeBeauty方法参数错误）：参数为 string | number');
+  if (
+    timestamp &&
+    !(type(timestamp) === "string" || type(timestamp) === "number")
+  ) {
+    console.error(
+      "project-libs（timeBeauty方法参数错误）：参数为 string | number"
+    );
     return;
   }
 
@@ -33,17 +40,21 @@ export default function timeBeauty(timestamp: string | number): string {
   const diffHour = Math.floor(diffTime / hour);
   const diffMinute = Math.floor(diffTime / minute);
   const diffDay = Math.floor(diffTime / day);
-  let result = '';
+  let result = "";
 
   if (diffTime > 0) {
     if (diffTime <= minute) {
-      result = '刚刚';
+      result = "刚刚";
     } else if (diffTime > minute && diffTime <= hour) {
       result = `${diffMinute}分钟前`;
     } else if (diffTime > hour && diffTime <= day) {
       result = `${diffHour}小时前`;
     } else if (diffTime > day && diffTime <= day * 2) {
-      result = `昨天${date.getHours() < 10 ? `0${date.getHours()}` : date.getHours()}:${date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes()}`;
+      result = `昨天${
+        date.getHours() < 10 ? `0${date.getHours()}` : date.getHours()
+      }:${
+        date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes()
+      }`;
     } else if (diffTime > day * 2 && diffTime <= day * 28) {
       return `${diffDay}天前`;
     } else if (diffTime > day * 28) {
@@ -57,5 +68,7 @@ export default function timeBeauty(timestamp: string | number): string {
 }
 
 function fullTime(date: Date) {
-  return `${date.getFullYear()}-${date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1}-${date.getDate() < 10 ? `0${date.getDate()}` : date.getDate()}`;
+  return `${date.getFullYear()}-${
+    date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}` : date.getMonth() + 1
+  }-${date.getDate() < 10 ? `0${date.getDate()}` : date.getDate()}`;
 }
