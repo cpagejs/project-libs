@@ -20,7 +20,8 @@
   "scripts": {
     "build": "webpack",
     "tsc": "tsc",
-    "test": "mocha --reporter spec --require ts-node/register ./test/*.test.ts",
+    "test-": "mocha --reporter spec --require ts-node/register ./test/*.test.ts",
+    "test": "mocha",
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs"
   },
@@ -35,7 +36,7 @@
     "@types/chai": "^5.0.1",
     "@types/jsdom": "^21.1.7",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^20.8.6",
+    "@types/node": "^22.13.0",
     "@types/webpack": "^5.28.5",
     "chai": "^5.1.2",
     "jsdom": "^26.0.0",

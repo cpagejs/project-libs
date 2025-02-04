@@ -1,6 +1,6 @@
 /**
  * 判断数据类型
- * @param ele {any} 元素
+ * @param ele {any} 传入的数据
  * @returns {string} boolean/number/string/function/array/date/regExp/undefined/null/object/map/set/symbol
  */
 export declare function type(ele: any): string;
@@ -24,12 +24,12 @@ export declare function isJsonString(ele: any): boolean;
  */
 declare namespace cookie {
   interface CONFIG {
-    hours?: number, // 过期时间，单位小时
-    path?: string, // 路径
-    domain?: string, // 域名
-    secure?: boolean, // 安全策略
-    httpOnly?: boolean, // 设置键值对是否可以被 js 访问
-    sameSite?: 'strict' | 'Strict' | 'lax' | 'Lax' | 'none' | 'None', // 用来限制第三方 Cookie
+    hours?: number; // 过期时间，单位小时
+    path?: string; // 路径
+    domain?: string; // 域名
+    secure?: boolean; // 安全策略
+    httpOnly?: boolean; // 设置键值对是否可以被 js 访问
+    sameSite?: "strict" | "Strict" | "lax" | "Lax" | "none" | "None"; // 用来限制第三方 Cookie
   }
 
   interface CookieStatic {
@@ -38,7 +38,7 @@ declare namespace cookie {
     /**
      * 判断cookie是否可用
      * @returns {boolean} boolean
-    */
+     */
     support(): boolean;
 
     /**
@@ -54,23 +54,23 @@ declare namespace cookie {
      *  secure: 安全策略,
      *  httpOnly: 设置键值对是否可以被 js 访问,
      *  sameSite: 用来限制第三方 Cookie
-     * } 
-     * ```          
-    */
-    set(name: string, value: string | object, config?: CONFIG): void
+     * }
+     * ```
+     */
+    set(name: string, value: string | object, config?: CONFIG): void;
 
     /**
      * 查询 cookie
      * @param name {string} Cookie 的键；如果参数为空则获取所有的cookie
      * @returns {string | object | null} 有参数获取单独的cookie，没有参数获取所有cookie；获取不到则返回 null
-    */
+     */
     get(name?: string): string | object | null;
 
     /**
      * 删除 cookie
      * @param name Cookie 的键；如果参数为空，则清理所有的cookie
      * @param path 路径，默认为''
-    */
+     */
     remove(name: string, path?: string): void;
   }
 }
@@ -82,19 +82,19 @@ declare const cookie: cookie.CookieStatic;
 declare namespace base64 {
   interface base64Static {
     /**
-   * 字符串转 base64
-   * @param str {string} 字符串
-   * @returns {string} 字符串
-   * @summary btoa() 方法不支持 IE9 及更早的 IE 版本
-   */
+     * 字符串转 base64
+     * @param str {string} 字符串
+     * @returns {string} 字符串
+     * @summary btoa() 方法不支持 IE9 及更早的 IE 版本
+     */
     encode(str: string): string;
 
     /**
-   * base64 转字符串
-   * @param str {string} 字符串
-   * @returns {string} 字符串
-   * @summary atob() 方法不支持 IE9 及更早的 IE 版本
-   */
+     * base64 转字符串
+     * @param str {string} 字符串
+     * @returns {string} 字符串
+     * @summary atob() 方法不支持 IE9 及更早的 IE 版本
+     */
     decode(str: string): string;
   }
 }
@@ -173,7 +173,7 @@ export declare function arrayGroup(arr: Array<any>, num: number): Array<any>;
  * @param b Array<any>
  * @returns Array[]
  */
- export declare function arrayIntersection(a: Array<any>, b: Array<any>): any[];
+export declare function arrayIntersection(a: Array<any>, b: Array<any>): any[];
 
 /**
  * 获取两个数组的差集
@@ -282,7 +282,7 @@ export declare function isPostCode(code: string): boolean;
 export declare function copy<T>(str: string): Promise<any>;
 
 /**
- * 在 head 中创建 css 的 link 标签 
+ * 在 head 中创建 css 的 link 标签
  * @param url {string} url 地址
  */
 export declare function createLink(url: string): void;
@@ -313,7 +313,7 @@ export declare function getScrollTop(): number;
  * ```
  * urlParams({id:10, addr: 'zz'})
  * // "id=10&addr=zz"
- * 
+ *
  * urlParams({id:10, addr: 'zz'}, true)
  * // "id%3D10%26addr%3Dzz"
  * ```
@@ -330,7 +330,7 @@ export declare function urlGet(key: string, href?: string): string | null;
 
 /**
  * 睡眠函数
- * @param delay 睡眠时间(毫秒)，默认为 0 
+ * @param delay 睡眠时间(毫秒)，默认为 0
  * @returns {promise} 返回一个 promise 对象
  */
 export declare function sleep<T>(delay: number): Promise<T>;
